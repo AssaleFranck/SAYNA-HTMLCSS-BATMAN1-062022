@@ -22,18 +22,16 @@
 </head>
 <body>
     <!-- HEADER -->
-    <header>
+    <header id="up">
         <nav>
             <div class="logo">
-                <img src="Assets/Logos/logohome.png" alt="logo batman">
+                <a href="#"><img src="Assets/Logos/logohome.png" alt="logo batman"></a>
             </div>
-            <!-- <div class="nav_list"> -->
-                <ul>
-                    <li><a href="">home</a></li>
-                    <!-- <li><a href="">home2</a></li> -->
-                    <!-- <li><a href="">home3</a></li> -->
-                </ul>
-            <!-- </div> -->
+            <ul>
+                <li><a class="home" href="#up">home</a></li>
+                <!-- <li><a href="">home2</a></li>
+                <li><a href="">home3</a></li> -->
+            </ul>
         </nav>
     </header>
     <!-- END HEADER -->
@@ -60,18 +58,22 @@
         <!-- END BANNER -->
 
         <!-- SIDE SOCIAL NETWORK BOX -->
-        <!-- <div class="side_box">
-            <div class="arrow_up"></div>
-            <div class="social_icon">
-                <img src="Assets/Logos/icon_facebook.png" alt="Facebook">
-                <img src="Assets/Logos/icon_ig.png" alt="Instagram">
-                <img src="Assets/Logos/icon_tw.png" alt="Twitter">
+        <div class="side_box">
+            <div class="arrow">
+                <a href="#up"><img src="Assets/Logos/logo_bat_flèche.png" alt="fleche batman"></a>
             </div>
-            <div class="arrow_down"></div>
-        </div> -->
+            <div class="social_icons">
+                <a href="#"><img src="Assets/Logos/icon_facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="Assets/Logos/icon_ig.png" alt="Instagram"></a>
+                <a href="#"><img src="Assets/Logos/icon_tw.png" alt="Twitter"></a>
+            </div>
+            <div class="arrow">
+                <a href="#newsletter"><img src="Assets/Logos/logo_bat_flèche_2.png" alt="fleche batman"></a>
+            </div>
+        </div>
         <!-- END BOX -->
 
-        <div class="transform">
+        <div id="transform">
             <!-- BATMAN AU CINEMA -->
             <section id="batman">
                 <div class="section_text">
@@ -104,10 +106,9 @@
 
             <!-- SECTION NEMESIS -->
             <section id="nemesis">
+                <img class="batarang" src="Assets/Illustrations/Bathome13.png" alt="Batarang">
                 <div class="section_text">
-                    <h2>némésis
-                        <img src="Assets/Illustrations/Bathome13.png" alt="Batarang">
-                    </h2>
+                    <h2>némésis</h2>
                     <p>
                         Batman souhaite éradiquer la criminalité de Gotham. C’est pourquoi, il affrontera la plupart 
                         du temps, des vilains sans capacités surnaturelles mais particulièrement violents ou 
@@ -189,18 +190,18 @@
             <h2>multimédia</h2>
             <!-- carousel -->
             <div class="carousel">
-                <div class="btn_slide">
-                    <img src="Assets/Logos/icon_flèche_1.png" alt="right">
+                <div class="btn_slide_left">
+                    <a href=""><img src="Assets/Logos/icon_flèche_1.png" alt="right"></a>
                 </div>
                 <div class="carousel_inner">
                     <div class="carousel_item">
                         <div class="slide_img">
                             <img src="Assets/Illustrations/Bathome_ba1.png" alt="Affiche du film">
                         </div>
-                        <div class="slide_content">
+                        <div class="slide_content item">
                             <h6 class="theme">ACTION, Adventure</h6>
                             <h6 class="name">Batman Begins</h6>
-                            <h6 class="note">IMDB : <span>8.2</span></h6>
+                            <h6 class="note">IMDB: <span>8.2</span></h6>
                             <p class="description">
                                 Le jeune Bruce Wayne assiste impuissant au meurtre de ses parents. Profondément 
                                 traumatisé, il grandit obnubilé par un désir de vengeance. La Ligue des ombres, une secte de 
@@ -233,56 +234,59 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="btn_slide">
-                    <img src="Assets/Logos/icon_flèche_2.png" alt="left">
+                <div class="btn_slide_right">
+                    <a href=""><img src="Assets/Logos/icon_flèche_2.png" alt="left"></a>
                 </div>
             </div>
             <!-- end carousel -->
 
             <!-- player -->
             <div class="player">
-                <img src="Assets/Illustrations/Bathome_ba2.png" alt="Bande d'annonce officielle">
-                <img src="Assets/Logos/icon_player.png" alt="play">
+                <img class="player_img" src="Assets/Illustrations/Bathome_ba2.png" alt="Bande d'annonce officielle">
+                <a href="#"><img class="btn_play" src="Assets/Logos/icon_player.png" alt="play"></a>
             </div>
             <!-- end player -->
         </section>
 
         <!-- SECTION CONTACT -->
-        <section id="contact">
-            <h2>prenons contact</h2>
-            <div>
-                <div class="mail">
-                    <h4>Adresse email</h4>
-                    <input type="text" placeholder="Adresse email">
-                </div>
-                <div class="newletter">
-                    <p>En cochant cette case vous acceptez de recevoir l’actualité concernant les aventures de 
-                        Batman : <input type="checkbox" name="" id="">
-                    </p>
-                    <select name="" id="">
-                        <option value="" disabled>Choisissez la fréquence à laquelle vous souhaitez recevoir votre newsletter</option>
-                        <option value="">Une fois par semaine</option>
-                        <option value="">Une fois toutes les deux semaines (2 fois par mois)</option>
-                        <option value="">Une fois par mois</option>
-                        <option value="">Une fois tous les trois mois</option>
-                        <option value="">Une fois tous les six mois </option>
-                    </select>
-                    <div>
-                        <p>Souhaitez-vous recevoir des news</p>
-                        <div class="newsletter_choose">
-                            <button class="btn_sm">Des films</button>
-                            <button class="btn_sm">Des comics</button>
-                            <button class="btn_sm">De tout</button>
+        <!-- <section id="newsletter">
+            <div class="container">
+                <h2>prenons contact</h2>
+                <form action="">
+                    <div class="mail">
+                        <h4>Adresse email</h4>
+                        <input type="text" placeholder="Adresse email">
+                    </div>
+                    <div class="newletter">
+                        <h4>newletter</h4>
+                        <p>En cochant cette case vous acceptez de recevoir l’actualité concernant les aventures de 
+                            Batman : <input type="checkbox" name="" id="">
+                        </p>
+                        <select name="" id="">
+                            <option value="" disabled>Choisissez la fréquence à laquelle vous souhaitez recevoir votre newsletter</option>
+                            <option value="">Une fois par semaine</option>
+                            <option value="">Une fois toutes les deux semaines (2 fois par mois)</option>
+                            <option value="">Une fois par mois</option>
+                            <option value="">Une fois tous les trois mois</option>
+                            <option value="">Une fois tous les six mois </option>
+                        </select>
+                        <div>
+                            <p>Souhaitez-vous recevoir des news</p>
+                            <div class="newsletter_choose">
+                                <button class="btn_sm">Des films</button>
+                                <button class="btn_sm">Des comics</button>
+                                <button class="btn_sm">De tout</button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="message">
+                        <h4>Message</h4>
+                        <input type="text" placeholder="Laissez un commentaire pour la communauté">
+                    </div>
+                    <a href="" class="btn">CONFIRMER</a>
+                </form>
             </div>
-            <div class="message">
-                <h4>Message</h4>
-                <input type="text" placeholder="Laissez un commentaire pour la communauté">
-            </div>
-            <button class="btn">CONFIRMER</button>
-        </section>
+        </section> -->
         <!-- END SECTION -->
 
         <!-- SECTION REPLIQUE -->
@@ -291,8 +295,10 @@
                 <img src="Assets/Logos/icon_guillemets_1.png" alt="icon guillemet">
             </div>
             <div class="message_slide">
-                <p>La seule façon raisonnable de vivre en ce bas monde, c'est en dehors des règles.</p>
-                <p>The Dark Knight : Le Chevalier Noir - Le Joker à Batman (2008)</p>
+                <div class="container">
+                    <p>La seule façon raisonnable de vivre en ce bas monde, c'est en dehors des règles.</p>
+                    <p class="text_sm">The Dark Knight : Le Chevalier Noir - Le Joker à Batman (2008)</p>
+                </div>
             </div>
             <div class="right_mark">
                 <img src="Assets/Logos/icon_guillemets_2.png" alt="icon guillemet">
@@ -301,21 +307,24 @@
         <!-- END SECTION -->
     </main>
     <footer>
-        <p>
-            <img src="Assets/Logos/icon_WB.png" alt="Warner Bros">
-            Ce projet respecte l’univers cinématographique des films Batman récents. Version Nolan & 
-            Snyder & Reeves
-        </p>
-        <div class="logo_of">
-            <div class="partner">
-                <img src="Assets/Logos/logo_sayna_white.png" alt="Logo SAYNA">
-                <img src="Assets/Logos/icon_x.png" alt="icon">
-                <img src="Assets/Logos/icon_DC.png" alt="Logo DC">
+        <div class="container">
+            <div class="row">
+                <img src="Assets/Logos/icon_WB.png" alt="Warner Bros">
+                <p> 
+                    Ce projet respecte l’univers cinématographique des films Batman récents. Version Nolan & Snyder & Reeves
+                </p>
             </div>
-            <div class="social">
-                <img src="Assets/Logos/icon_facebook.png" alt="Facebook">
-                <img src="Assets/Logos/icon_ig.png" alt="Instagram">
-                <img src="Assets/Logos/icon_tw.png" alt="Twitter">
+            <div class="logo_box">
+                <div class="partner">
+                    <img src="Assets/Logos/logo_sayna_white.png" alt="Logo SAYNA">
+                    <img src="Assets/Logos/icon_x.png" alt="icon">
+                    <img src="Assets/Logos/icon_DC.png" alt="Logo DC">
+                </div>
+                <div class="social">
+                    <a href=""><img src="Assets/Logos/icon_facebook.png" alt="Facebook"></a>
+                    <a href=""><img src="Assets/Logos/icon_ig.png" alt="Instagram"></a>
+                    <a href=""><img src="Assets/Logos/icon_tw.png" alt="Twitter"></a>
+                </div>
             </div>
         </div>
     </footer>

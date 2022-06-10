@@ -1,3 +1,8 @@
+// @font-face {
+//     font-family: 'Space Grotesk', sans-serif;
+//     src: url('Assets');
+// }
+
 * {
     margin: 0;
     padding: 0;
@@ -7,29 +12,27 @@ body {
     overflow-x: hidden;
 }
 
-
-
 a {
     text-decoration: none;
     color: #fff;
 }
 
-p, h1, h4 {
+p, h1, h4, h6 {
     font-family: 'Space Grotesk', sans-serif;
 }
+
 p {
-    font-size: 22px;
+    font-size: 1.7vw;
     font-weight: 200;
 }
 
 h1 {
-    font-size: 32px;
+    font-size: 2.7vw;
     margin: 1.2rem 0;
 }
 
 
-
-// All font
+//  **************************** FONT ****************************
 
 a, h2 {
     font-family: 'Rajdhani', sans-serif;
@@ -38,7 +41,8 @@ a, h2 {
 .space_grotesk {
     font-family: 'Space Grotesk', sans-serif;
 }
-// *************************************************************************
+
+/* -------------------------------------------------------------*/
 
 // body{
 //     background-image: url("Assets/Illustrations/Bathome1.png");
@@ -47,7 +51,8 @@ a, h2 {
 //     background-size: contain;
 // }
 
-// EXTEND DIRETIVE
+
+//  **************************** EXTEND DIRECTIVE ***************************************
 .w100 {
     width: 100%;
 }
@@ -55,7 +60,7 @@ a, h2 {
     width: 100%;
 }
 .margin {
-    margin: 0 102px;
+    margin: 0 7.5vw;
 }
 
 .d-flex {
@@ -75,14 +80,21 @@ a, h2 {
     justify-content: flex-end;
     align-items: center;
 }
+.flex_start {
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .flex_evenly{
     justify-content: space-evenly;
     align-items: center;
 }
 
-
-
-
+.position_up {
+    position: relative;
+    left: -14vw;
+    width: 102vw;
+}
 
 .border{
     border: 2px solid #bcbbbd48;
@@ -97,17 +109,21 @@ a, h2 {
 .test3 {
     border: 1px solid yellow;
 }
+.test4 {
+    border: 1px solid red;
+}
+/* -------------------------------------------------------------*/
 
 
 
+//  **************************** NAV BAR ***************************************
 
 header{
-    @extend .border;
-    display: flex;
+    @extend .d-flex, .border, .margin;
     justify-content: center;
     align-items: flex-start;
-    margin: 0 102px;
-    height: 30vh;
+    border-top: none;
+    height: 27vh;
 }
 
 nav {
@@ -115,21 +131,31 @@ nav {
     flex-wrap: nowrap !important;
     margin-top: 4%;
     width: 90%;
-    // padding: 0 10%;
+}
 
+.logo {
+    width: 12%;
+
+    img {
+        width: 100%;
+    }
 }
 
 ul {
     @extend .d-flex, .flex_end;
-    // border: 1px solid yellow;
     list-style-type: none;
     width: 40%;
-
+    
     li {
-        font-size: 30px;
+        font-size: 2.5vw;
         margin: 0 0.2rem;
         width: 30%;
+        text-align: center;
         
+        .home {
+            font-weight: bold;
+            text-decoration: underline;
+        }
 
         a{
             font-weight: normal;
@@ -144,16 +170,21 @@ ul {
     }
 }
 
+/* -------------------------------------------------------------*/
+
+
+//  **************************** MAIN ***************************************
 
 main {
     @extend .margin, .border;
+    border-bottom: none;
 }
+/* -------------------------------------------------------------*/
 
 
 //  **************************** BANNER ***************************************
 
 .banner {
-    // @extend .test3;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 80% auto;
@@ -162,16 +193,16 @@ main {
 }
 
 .banner_info, .banner_text, .banner_btn, .banner_arrow {
-    display: flex;
+    @extend .d-flex;
 }
 
 .banner_info {
     @extend .flex_center;
     flex-flow: row wrap;
     width: 50%;
-    // height: 80%;
     margin: auto;
 }
+
 .banner_text {
     @extend .flex_center;
     flex-flow: row wrap;
@@ -183,114 +214,678 @@ main {
 
 .banner_btn {
     @extend .w100, .flex_evenly;
-    margin-top: 0.7rem;
+    margin-top: 2vh;
     
-    .btn {
-        font-size: 20px;
-        font-weight: normal;
-        // padding: 2em 4em;
-        padding: 1rem 2.5rem;
-        text-transform: uppercase;
-        background: linear-gradient(90deg, rgba(255, 255, 255, 0.4),#b113139f);
-        &:hover{
-            background: linear-gradient(90deg, rgb(255, 255, 255),#b11313);
-    
-        }
-    }
-
 }
+
+.btn {
+    font-size: 1.8vw;
+    font-weight: normal;
+    padding: 1vw 2.5vw;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.4),#b113139f);
+    &:hover{
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.644),#b11313);
+
+    }
+}
+
 .banner_arrow {
     @extend .flex_center;
 }
+/* -------------------------------------------------------------*/
 
-//    ************************************************************************
 
 
-//****************************** SECTION ******************************
+//****************************** SIDE BOX **********************************
+
+.side_box {
+    @extend .d-flex, .flex_between;
+    flex-direction: column;
+    position: fixed;
+    top: 29vh;
+    right: 4.5vw;
+    z-index: 100;
+    height: 50vh;
+    width: 7vw;
+    
+    .arrow {
+        max-width: 100%;
+        
+        img {
+            max-height: 100%;
+            width: 100%;
+        }
+    }
+    
+    .social_icons {
+        @extend .d-flex;
+        justify-content: space-around;
+        height: 55%;
+        width: 27%;
+        flex-direction: column;
+
+        img {
+            max-width: 100%;
+        }
+    }
+    
+}
+/* -------------------------------------------------------------*/
+
+
+
+
+//****************************** SECTION **********************************
 
 section {
-    // @extend .test;
-    margin: 20vh 0;
+    margin: 10vw 0;
     padding: 0 7%;
+
     h2 {
-        font-size: 36px;
+        font-size: 2.5vw;
         font-weight: bold;
         text-transform: uppercase;
         margin-bottom: 4vh;
-        // color: #b11313;
     }
+
     p {
         text-align: justify;
     }
 }
 
 .row_card {
-    margin-top: 10vh;
+    margin-top: 5vw;
     @extend .d-flex, .flex_between;
+
+    .card {
+        width: 30%;
+
+        img{
+            width: 100%;
+        }
+    }
 
     h4 {
         text-align: center;
         margin-top: 4vh;
-        font-size: 18px;
+        font-size: 1.3vw;
         font-weight: normal;
     }
 }
+/* -------------------------------------------------------------*/
 
 
-// **** NEMESIS ****
 
-.section_text {
-    h2 {
-        // @extend .test;
-        position: relative;
-    }
+
+// ************************ BATMAN AU CINEMA ************************
+
+#batman {
+    margin-top: 0;
+}
+/* -------------------------------------------------------------*/
+
+
+// ************************ NEMESIS ************************
+#nemesis {
+    position: relative;
     
-    img {
-        // @extend .test;
+    .batarang {
         position: absolute;
-        top: -11vh;
-        left: 7.5%;
+        top: -5vw;
+        left: 11vw;
         z-index: 8;
-        width: 140px;
+        width: 10vw;
     }
 }
+/* -------------------------------------------------------------*/
 
-// **** ALLIES ****
+
+// ************************ ALLIES ************************
 #allies {
     position: relative;
+
     .bat {
         position: absolute;
-        top: -30%;
-        right: -10%;
+        top: -18vw;
+        right: -8vw;
         z-index: 7;
-        // @extend .test;
+        width: 32vw;
     }
 }
+/* -------------------------------------------------------------*/
 
-// **** JUSTICE LEAGUE ****
+
+// ******************** JUSTICE LEAGUE ********************
 #league {
-    position: relative;
     margin-bottom: 0 !important;
+
     p {
-        margin-bottom: 10vh;
+        margin-bottom: 5vw;
     }
 
     .league_carousel {
-        // width: 100%;
+        @extend .position_up;
         background-color: #000;
-        width: 99vw;
-        // @extend .test2;
-        position: relative;
-        left: -14vw;
+        
         img {
             width: 100%;
         }
     }
 }
+/* -------------------------------------------------------------*/
 
-// **** MULTIMEDIA ****
 
-#multimedia{
+// ******************** MULTIMEDIA ************************
+
+#multimedia {
     margin: 0 !important;
-    // background: #fff;
+}
+
+.carousel {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    margin: 6vw 0;
+
+    .btn_slide_left {
+        @extend .d-flex, .flex_start ;
+    }
+
+    .btn_slide_right {
+        @extend .d-flex, .flex_end ;
+    }
+}
+
+.carousel_item {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    column-gap: 0;
+
+    img {
+        height: 100%;
+        width: 100%;
+    }
+
+}
+
+.slide_content {
+    padding: 1.5vw;
+    border: 1px solid #c4c4c4;
+    border-left: none;
+    margin: 0;
+    border-radius: 0 4% 4% 0;
+    background: linear-gradient(135deg,#40403b, #081d29);
+
+    p{
+        font-size: 1vw;
+        text-align: left;
+    }
+
+    h6 {
+        font-size: 1.3vw;
+        font-weight: lighter;
+        margin-bottom: 10px;
+
+        span {
+            color: #FFFF00;
+        }
+    }
+}
+/* -------------------------------------------------------------*/
+
+
+// ************************ Player ************************
+
+.player, .player_img{
+    @extend .w100;
+}
+
+.player {
+    @extend .d-flex, .flex_center;
+    position: relative;
+    margin-bottom: 10vh;
+
+    &:hover {
+        @extend .d-flex, .flex_center;
+        box-shadow: 0 0 20px 20px rgba(255, 255, 255, 0.295);
+
+        .btn_play {
+            top: 39%;
+            left: 43.7%;
+            width: 12%;
+        }
+    }
+    
+    .btn_play {
+        position: absolute;
+        top: 38%;
+        left: 42.7%;
+        width: 14%;
+    }
+}
+/* -------------------------------------------------------------*/
+
+
+// ************************ NEWSLETTER ************************
+
+#newsletter {
+    @extend .test3;
+    .container {
+        @extend .test2, .d-flex, .flex_between, .position_up;
+        flex-flow: column wrap;
+        padding: 7vh 0;
+        // height: 0vh;
+        background: linear-gradient(135deg,#40403b, #081d29);
+    }
+}
+
+form {
+    @extend .test, .d-flex,;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-flow: column wrap;
+    height: 88%;
+    width: 50vw;
+
+    h4 {
+        font-size: 22px;
+        margin-bottom: 20%;
+        text-transform: uppercase;
+    }
+}
+
+/* -------------------------------------------------------------*/
+
+
+// ************************ MESSAGE ************************
+
+#message {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    height: 70vh;
+    
+    .left_mark, .right_mark {
+        @extend .d-flex;
+        flex-direction: column;
+    }
+
+    .left_mark {
+        @extend .flex_start;
+    }
+
+    .right_mark {
+        @extend .flex_end;
+    }
+}
+
+.message_slide {
+    @extend .d-flex, .flex_center;
+    
+    .container {
+        @extend .d-flex, .flex_center;
+        flex-direction: column;
+
+        p{
+            width: 80%;
+            margin: 0;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .text_sm {
+            width: 40%;
+            margin-top: 30px;
+            line-height: 30px;
+            font-size: 12px;
+        }
+    }
+}
+/* -------------------------------------------------------------*/
+
+
+//  **************************** FOOTER ***************************************
+
+footer {
+    @extend .d-flex, .border, .margin ;
+    justify-content: center;
+    align-items: flex-start;
+    border-top: none;
+    height: 37vh;
+
+    .container {
+        @extend .d-flex, .flex_center;
+        flex-direction: column;
+        width: 60%;
+        
+        .row {
+            @extend .d-flex, .flex_center;
+            margin-bottom: 30px;
+            
+            p {
+                font-size: 0.8vw;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.logo_box {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    width: 60%;
+
+    .partner, .social {
+        @extend .d-flex, .flex_evenly;
+    }
+}
+/* -------------------------------------------------------------*/
+
+
+
+
+
+// *********************** MEDIA QUERY *****************************
+
+
+/* --------------------- TABLET ---------------------------*/
+
+@media (max-width: 768px) {
+    
+    header {
+        height: 20vh;
+    }
+
+    .banner {
+        height: 70vh;
+
+        .banner_info {
+            width: 55%;
+        }
+
+        .banner_btn {
+            margin-top: 0;
+        }
+
+        .btn {
+            padding: 0.7em 2em;
+        }
+    }
+
+    .side_box {
+        height: 30vh;
+        right: 5.8vw;
+        top: 35vh;
+    }
+
+    .row_card {
+
+        .card {
+            width: 30%;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    #allies {
+
+        .bat {
+            top: -17vw;
+            right: -8vw;
+        }
+    }
+
+    #league {
+
+        .league_carousel {
+            left: -14vw;
+            width: 102vw;
+        }
+
+    }
+    
+
+    #multimedia {
+        
+        .carousel {
+            grid-template-columns: 10% 80% 10%;
+        }
+
+        .btn_slide_left, .btn_slide_right {
+            
+            img {
+                width: 100%;
+            }
+        }
+
+
+    }
+
+    #message {
+        height: 40vw;
+        margin-bottom: 0;
+
+        .left_mark, .right_mark {
+            img {
+                width: 70%;
+            }
+        }
+
+        .message_slide {
+
+            .container {
+
+                p {
+                    font-size: 2.5vw;
+                    width: 100%;
+                }
+
+                .text_sm {
+                    font-size: 1.5vw;
+                    margin-top: 10px;
+                    width: 70%;
+                    line-height: normal;
+                }
+            }
+        }
+    }
+
+    footer {
+        align-items: center;
+
+        .logo_box {
+            width: 70%;
+        }
+
+        .partner, .social {
+            height: 80%;
+        }
+    }
+
+    
+}
+
+
+/* -------------------- MOBILE --------------------------*/
+
+
+@media (max-width: 480px) {
+
+    header {
+        height: 7vh;
+    }
+        
+    nav {
+        
+        .logo {
+            width: 15%;
+        }
+        
+        ul {
+            width: 70%;
+        }
+        
+        li {
+            margin: 0;
+            font-size: 3vw;
+        }
+    }
+
+    .banner {
+        height: 40vh;
+        grid-template-rows: 80% 20%;
+
+        .banner_info {
+            width: 55%;
+        }
+
+        .banner_btn {
+            margin-top: 0;
+        }
+
+        .btn {
+            padding: 0.7em 1.4em;
+        }
+
+        img {
+            height: 50%;
+        }
+
+        h1 {
+            margin: 1vh;
+        }
+    }
+
+    .side_box {
+        height: 20vh;
+        right: 6.2vw;
+        top: 40vh;
+    }
+
+    .batarang {
+        position: absolute;
+        top: -11vh;
+        left: 14;
+        z-index: 8;
+    }
+
+    #allies {
+
+        .bat {
+            top: -15vw;
+            right: -9vw;
+        }
+    }
+
+
+    #multimedia {
+        
+        .carousel {
+            grid-template-columns: 10% 80% 10%;
+            
+            .btn_slide_left {
+                display: flex;
+                justify-content: center !important;
+                
+                img {
+                    width: 70%;
+                }
+            }
+
+            .btn_slide_right {
+                margin: 0 auto;
+
+                img {
+                    width: 70%;
+                    margin-left: 2vw;
+                }
+            }
+        }
+
+    }
+
+    #message {
+        height: 30vh;
+        grid-template-columns: 13% 74% 13%;
+        grid-template-rows: 100%;
+
+        .left_mark, .right_mark {
+            height: 80%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .message_slide {
+
+            .container {
+                p {
+                    font-size: 2.5vw;
+                    width: 100%;
+                }
+                .text_sm {
+                    font-size: 1.5vw;
+                    margin-top: 10px;
+                    width: 70%;
+                    line-height: normal;
+
+                }
+            }
+        }
+    }
+
+
+    footer {
+        height: 30vh;
+        .container {
+            width: 100%;
+        }
+        font-size: 2vw;
+    }
+
+}
+
+// *********************** ANIMATION *****************************
+
+
+
+/* -------------------- FOR TEXT --------------------------*/
+
+p, h1, h2, h4, h6 {
+    position: relative;
+    animation-name: mymove;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-delay: 2s;
+}
+
+@keyframes mymove {
+    from {left: 300px;}
+    to {left: 0px;}
+}
+
+#transform {
+    position: relative;
+    animation-name: mymovetrans;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+}
+
+
+@keyframes mymovetrans {
+    from {right: 300px;}
+    to {right: 0px;}
+}
+
+
+/* -------------------- FOR IMG --------------------------*/
+
+
+.card {
+    img:hover {
+        transform: scale(1.1);
+    }
 }

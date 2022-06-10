@@ -12,17 +12,17 @@ a {
   color: #fff;
 }
 
-p, h1, h4 {
+p, h1, h4, h6 {
   font-family: "Space Grotesk", sans-serif;
 }
 
 p {
-  font-size: 22px;
+  font-size: 1.7vw;
   font-weight: 200;
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 2.7vw;
   margin: 1.2rem 0;
 }
 
@@ -34,7 +34,8 @@ a, h2 {
   font-family: "Space Grotesk", sans-serif;
 }
 
-.w100, .banner_btn {
+/* -------------------------------------------------------------*/
+.w100, .player, .player_img, .banner_btn {
   width: 100%;
 }
 
@@ -42,57 +43,72 @@ a, h2 {
   width: 100%;
 }
 
-.margin, main {
-  margin: 0 102px;
+.margin, footer, main, header {
+  margin: 0 7.5vw;
 }
 
-.d-flex, .row_card, ul, nav {
+.d-flex, .logo_box .partner, .logo_box .social, footer .container .row, footer .container, footer, .message_slide .container, .message_slide, #message .left_mark, #message .right_mark, form, #newsletter .container, .player:hover, .player, .carousel .btn_slide_right, .carousel .btn_slide_left, .row_card, .side_box .social_icons, .side_box, .banner_info, .banner_text, .banner_btn, .banner_arrow, ul, nav, header {
   display: flex;
 }
 
-.flex_center, .banner_arrow, .banner_text, .banner_info {
+.flex_center, footer .container .row, footer .container, .message_slide .container, .message_slide, .player:hover, .player, .banner_arrow, .banner_text, .banner_info {
   justify-content: center;
   align-items: center;
 }
 
-.flex_between, .row_card, nav {
+.flex_between, #newsletter .container, .row_card, .side_box, nav {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.flex_end, ul {
+.flex_end, #message .right_mark, .carousel .btn_slide_right, ul {
   justify-content: flex-end;
   align-items: center;
 }
 
-.flex_evenly, .banner_btn {
+.flex_start, #message .left_mark, .carousel .btn_slide_left {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex_evenly, .logo_box .partner, .logo_box .social, .banner_btn {
   justify-content: space-evenly;
   align-items: center;
 }
 
-.border, main, header {
+.position_up, #newsletter .container, #league .league_carousel {
+  position: relative;
+  left: -14vw;
+  width: 102vw;
+}
+
+.border, footer, main, header {
   border: 2px solid rgba(188, 187, 189, 0.2823529412);
 }
 
-.test {
+.test, form {
   border: 1px solid #fff;
 }
 
-.test2 {
+.test2, #newsletter .container {
   border: 1px solid green;
 }
 
-.test3 {
+.test3, #newsletter {
   border: 1px solid yellow;
 }
 
+.test4 {
+  border: 1px solid red;
+}
+
+/* -------------------------------------------------------------*/
 header {
-  display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin: 0 102px;
-  height: 30vh;
+  border-top: none;
+  height: 27vh;
 }
 
 nav {
@@ -101,14 +117,26 @@ nav {
   width: 90%;
 }
 
+.logo {
+  width: 12%;
+}
+.logo img {
+  width: 100%;
+}
+
 ul {
   list-style-type: none;
   width: 40%;
 }
 ul li {
-  font-size: 30px;
+  font-size: 2.5vw;
   margin: 0 0.2rem;
   width: 30%;
+  text-align: center;
+}
+ul li .home {
+  font-weight: bold;
+  text-decoration: underline;
 }
 ul li a {
   font-weight: normal;
@@ -121,16 +149,18 @@ ul li a:hover {
   text-decoration: underline;
 }
 
+/* -------------------------------------------------------------*/
+main {
+  border-bottom: none;
+}
+
+/* -------------------------------------------------------------*/
 .banner {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 80% auto;
   row-gap: 0;
   height: 110vh;
-}
-
-.banner_info, .banner_text, .banner_btn, .banner_arrow {
-  display: flex;
 }
 
 .banner_info {
@@ -147,25 +177,54 @@ ul li a:hover {
 }
 
 .banner_btn {
-  margin-top: 0.7rem;
+  margin-top: 2vh;
 }
-.banner_btn .btn {
-  font-size: 20px;
+
+.btn {
+  font-size: 1.8vw;
   font-weight: normal;
-  padding: 1rem 2.5rem;
+  padding: 1vw 2.5vw;
   text-transform: uppercase;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), rgba(177, 19, 19, 0.6235294118));
 }
-.banner_btn .btn:hover {
-  background: linear-gradient(90deg, rgb(255, 255, 255), #b11313);
+.btn:hover {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.644), #b11313);
 }
 
+/* -------------------------------------------------------------*/
+.side_box {
+  flex-direction: column;
+  position: fixed;
+  top: 29vh;
+  right: 4.5vw;
+  z-index: 100;
+  height: 50vh;
+  width: 7vw;
+}
+.side_box .arrow {
+  max-width: 100%;
+}
+.side_box .arrow img {
+  max-height: 100%;
+  width: 100%;
+}
+.side_box .social_icons {
+  justify-content: space-around;
+  height: 55%;
+  width: 27%;
+  flex-direction: column;
+}
+.side_box .social_icons img {
+  max-width: 100%;
+}
+
+/* -------------------------------------------------------------*/
 section {
-  margin: 20vh 0;
+  margin: 10vw 0;
   padding: 0 7%;
 }
 section h2 {
-  font-size: 36px;
+  font-size: 2.5vw;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 4vh;
@@ -175,53 +234,436 @@ section p {
 }
 
 .row_card {
-  margin-top: 10vh;
+  margin-top: 5vw;
+}
+.row_card .card {
+  width: 30%;
+}
+.row_card .card img {
+  width: 100%;
 }
 .row_card h4 {
   text-align: center;
   margin-top: 4vh;
-  font-size: 18px;
+  font-size: 1.3vw;
   font-weight: normal;
 }
 
-.section_text h2 {
-  position: relative;
-}
-.section_text img {
-  position: absolute;
-  top: -11vh;
-  left: 7.5%;
-  z-index: 8;
-  width: 140px;
+/* -------------------------------------------------------------*/
+#batman {
+  margin-top: 0;
 }
 
+/* -------------------------------------------------------------*/
+#nemesis {
+  position: relative;
+}
+#nemesis .batarang {
+  position: absolute;
+  top: -5vw;
+  left: 11vw;
+  z-index: 8;
+  width: 10vw;
+}
+
+/* -------------------------------------------------------------*/
 #allies {
   position: relative;
 }
 #allies .bat {
   position: absolute;
-  top: -30%;
-  right: -10%;
+  top: -18vw;
+  right: -8vw;
   z-index: 7;
+  width: 32vw;
 }
 
+/* -------------------------------------------------------------*/
 #league {
-  position: relative;
   margin-bottom: 0 !important;
 }
 #league p {
-  margin-bottom: 10vh;
+  margin-bottom: 5vw;
 }
 #league .league_carousel {
   background-color: #000;
-  width: 99vw;
-  position: relative;
-  left: -14vw;
 }
 #league .league_carousel img {
   width: 100%;
 }
 
+/* -------------------------------------------------------------*/
 #multimedia {
   margin: 0 !important;
+}
+
+.carousel {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  margin: 6vw 0;
+}
+.carousel_item {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  -moz-column-gap: 0;
+       column-gap: 0;
+}
+.carousel_item img {
+  height: 100%;
+  width: 100%;
+}
+
+.slide_content {
+  padding: 1.5vw;
+  border: 1px solid #c4c4c4;
+  border-left: none;
+  margin: 0;
+  border-radius: 0 4% 4% 0;
+  background: linear-gradient(135deg, #40403b, #081d29);
+}
+.slide_content p {
+  font-size: 1vw;
+  text-align: left;
+}
+.slide_content h6 {
+  font-size: 1.3vw;
+  font-weight: lighter;
+  margin-bottom: 10px;
+}
+.slide_content h6 span {
+  color: #FFFF00;
+}
+
+/* -------------------------------------------------------------*/
+.player {
+  position: relative;
+  margin-bottom: 10vh;
+}
+.player:hover {
+  box-shadow: 0 0 20px 20px rgba(255, 255, 255, 0.295);
+}
+.player:hover .btn_play {
+  top: 39%;
+  left: 43.7%;
+  width: 12%;
+}
+.player .btn_play {
+  position: absolute;
+  top: 38%;
+  left: 42.7%;
+  width: 14%;
+}
+
+/* -------------------------------------------------------------*/
+#newsletter .container {
+  flex-flow: column wrap;
+  padding: 7vh 0;
+  background: linear-gradient(135deg, #40403b, #081d29);
+}
+
+form {
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-flow: column wrap;
+  height: 88%;
+  width: 50vw;
+}
+form h4 {
+  font-size: 22px;
+  margin-bottom: 20%;
+  text-transform: uppercase;
+}
+
+/* -------------------------------------------------------------*/
+#message {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  height: 70vh;
+}
+#message .left_mark, #message .right_mark {
+  flex-direction: column;
+}
+.message_slide .container {
+  flex-direction: column;
+}
+.message_slide .container p {
+  width: 80%;
+  margin: 0;
+  text-align: center;
+  font-size: 18px;
+}
+.message_slide .container .text_sm {
+  width: 40%;
+  margin-top: 30px;
+  line-height: 30px;
+  font-size: 12px;
+}
+
+/* -------------------------------------------------------------*/
+footer {
+  justify-content: center;
+  align-items: flex-start;
+  border-top: none;
+  height: 37vh;
+}
+footer .container {
+  flex-direction: column;
+  width: 60%;
+}
+footer .container .row {
+  margin-bottom: 30px;
+}
+footer .container .row p {
+  font-size: 0.8vw;
+  margin-left: 10px;
+}
+
+.logo_box {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  width: 60%;
+}
+/* -------------------------------------------------------------*/
+/* --------------------- TABLET ---------------------------*/
+@media (max-width: 768px) {
+  header {
+    height: 20vh;
+  }
+
+  .banner {
+    height: 70vh;
+  }
+  .banner .banner_info {
+    width: 55%;
+  }
+  .banner .banner_btn {
+    margin-top: 0;
+  }
+  .banner .btn {
+    padding: 0.7em 2em;
+  }
+
+  .side_box {
+    height: 30vh;
+    right: 5.8vw;
+    top: 35vh;
+  }
+
+  .row_card .card {
+    width: 30%;
+  }
+  .row_card .card img {
+    width: 100%;
+  }
+
+  #allies .bat {
+    top: -17vw;
+    right: -8vw;
+  }
+
+  #league .league_carousel {
+    left: -14vw;
+    width: 102vw;
+  }
+
+  #multimedia .carousel {
+    grid-template-columns: 10% 80% 10%;
+  }
+  #multimedia .btn_slide_left img, #multimedia .btn_slide_right img {
+    width: 100%;
+  }
+
+  #message {
+    height: 40vw;
+    margin-bottom: 0;
+  }
+  #message .left_mark img, #message .right_mark img {
+    width: 70%;
+  }
+  #message .message_slide .container p {
+    font-size: 2.5vw;
+    width: 100%;
+  }
+  #message .message_slide .container .text_sm {
+    font-size: 1.5vw;
+    margin-top: 10px;
+    width: 70%;
+    line-height: normal;
+  }
+
+  footer {
+    align-items: center;
+  }
+  footer .logo_box {
+    width: 70%;
+  }
+  footer .partner, footer .social {
+    height: 80%;
+  }
+}
+/* -------------------- MOBILE --------------------------*/
+@media (max-width: 480px) {
+  header {
+    height: 7vh;
+  }
+
+  nav .logo {
+    width: 15%;
+  }
+  nav ul {
+    width: 70%;
+  }
+  nav li {
+    margin: 0;
+    font-size: 3vw;
+  }
+
+  .banner {
+    height: 40vh;
+    grid-template-rows: 80% 20%;
+  }
+  .banner .banner_info {
+    width: 55%;
+  }
+  .banner .banner_btn {
+    margin-top: 0;
+  }
+  .banner .btn {
+    padding: 0.7em 1.4em;
+  }
+  .banner img {
+    height: 50%;
+  }
+  .banner h1 {
+    margin: 1vh;
+  }
+
+  .side_box {
+    height: 20vh;
+    right: 6.2vw;
+    top: 40vh;
+  }
+
+  .batarang {
+    position: absolute;
+    top: -11vh;
+    left: 14;
+    z-index: 8;
+  }
+
+  #allies .bat {
+    top: -15vw;
+    right: -9vw;
+  }
+
+  #multimedia .carousel {
+    grid-template-columns: 10% 80% 10%;
+  }
+  #multimedia .carousel .btn_slide_left {
+    display: flex;
+    justify-content: center !important;
+  }
+  #multimedia .carousel .btn_slide_left img {
+    width: 70%;
+  }
+  #multimedia .carousel .btn_slide_right {
+    margin: 0 auto;
+  }
+  #multimedia .carousel .btn_slide_right img {
+    width: 70%;
+    margin-left: 2vw;
+  }
+
+  #message {
+    height: 30vh;
+    grid-template-columns: 13% 74% 13%;
+    grid-template-rows: 100%;
+  }
+  #message .left_mark, #message .right_mark {
+    height: 80%;
+  }
+  #message .left_mark img, #message .right_mark img {
+    width: 100%;
+  }
+  #message .message_slide .container p {
+    font-size: 2.5vw;
+    width: 100%;
+  }
+  #message .message_slide .container .text_sm {
+    font-size: 1.5vw;
+    margin-top: 10px;
+    width: 70%;
+    line-height: normal;
+  }
+
+  footer {
+    height: 30vh;
+    font-size: 2vw;
+  }
+  footer .container {
+    width: 100%;
+  }
+}
+/* -------------------- FOR TEXT --------------------------*/
+p, h1, h2, h4, h6 {
+  position: relative;
+  -webkit-animation-name: mymove;
+          animation-name: mymove;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+@-webkit-keyframes mymove {
+  from {
+    left: 300px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes mymove {
+  from {
+    left: 300px;
+  }
+  to {
+    left: 0px;
+  }
+}
+#transform {
+  position: relative;
+  -webkit-animation-name: mymovetrans;
+          animation-name: mymovetrans;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+@-webkit-keyframes mymovetrans {
+  from {
+    right: 300px;
+  }
+  to {
+    right: 0px;
+  }
+}
+
+@keyframes mymovetrans {
+  from {
+    right: 300px;
+  }
+  to {
+    right: 0px;
+  }
+}
+/* -------------------- FOR IMG --------------------------*/
+.card img:hover {
+  transform: scale(1.1);
 }/*# sourceMappingURL=style.css.map */
