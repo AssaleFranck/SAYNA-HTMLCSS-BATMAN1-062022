@@ -87,7 +87,7 @@ a, h2 {
   border: 2px solid rgba(188, 187, 189, 0.2823529412);
 }
 
-.test, form {
+.test, footer, form, .banner_info {
   border: 1px solid #fff;
 }
 
@@ -95,11 +95,11 @@ a, h2 {
   border: 1px solid green;
 }
 
-.test3, #newsletter {
+.test3, .logo_box, #newsletter {
   border: 1px solid yellow;
 }
 
-.test4 {
+.test4, .logo_box .partner, .logo_box .social, footer .container {
   border: 1px solid red;
 }
 
@@ -420,9 +420,14 @@ footer .container .row p {
 
 .logo_box {
   display: grid;
-  grid-template-columns: 40% 60%;
-  width: 60%;
+  grid-template-columns: 50% 40%;
+  width: 70%;
 }
+.logo_box .partner img, .logo_box .social img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
 /* -------------------------------------------------------------*/
 /* --------------------- TABLET ---------------------------*/
 @media (max-width: 768px) {
@@ -494,6 +499,14 @@ footer .container .row p {
   footer {
     align-items: center;
   }
+  footer .container {
+    width: 80%;
+  }
+  footer .container .row p {
+    font-size: small;
+    text-align: center;
+    margin: 0;
+  }
   footer .logo_box {
     width: 70%;
   }
@@ -503,6 +516,10 @@ footer .container .row p {
 }
 /* -------------------- MOBILE --------------------------*/
 @media (max-width: 480px) {
+  p {
+    font-size: small;
+  }
+
   header {
     height: 7vh;
   }
@@ -523,18 +540,23 @@ footer .container .row p {
     grid-template-rows: 80% 20%;
   }
   .banner .banner_info {
-    width: 55%;
+    width: 80%;
   }
   .banner .banner_btn {
     margin-top: 0;
   }
   .banner .btn {
+    font-size: x-small;
     padding: 0.7em 1.4em;
   }
   .banner img {
     height: 50%;
   }
+  .banner p {
+    font-size: 10px;
+  }
   .banner h1 {
+    font-size: medium;
     margin: 1vh;
   }
 
@@ -544,10 +566,26 @@ footer .container .row p {
     top: 40vh;
   }
 
+  section h2 {
+    font-size: larger;
+    margin-bottom: 2vh;
+  }
+  section .row_card {
+    flex-direction: column;
+  }
+  section .row_card .card {
+    width: 80%;
+  }
+  section .row_card h4 {
+    margin-top: 1vw;
+    margin-bottom: 6vh;
+    font-size: 1em;
+  }
+
   .batarang {
     position: absolute;
-    top: -11vh;
-    left: 14;
+    top: -4vh !important;
+    left: 18vw !important;
     z-index: 8;
   }
 
@@ -598,72 +636,29 @@ footer .container .row p {
 
   footer {
     height: 30vh;
-    font-size: 2vw;
   }
   footer .container {
     width: 100%;
   }
+  footer .container .row {
+    width: 80%;
+  }
+  footer .container .row p {
+    font-size: xx-small;
+  }
+  footer .container .logo_box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+  }
+  footer .container .logo_box .partner, footer .container .logo_box .social {
+    justify-content: space-between;
+    width: 35%;
+  }
+  footer .container .logo_box img {
+    max-width: 100%;
+  }
 }
 /* -------------------- FOR TEXT --------------------------*/
-p, h1, h2, h4, h6 {
-  position: relative;
-  -webkit-animation-name: mymove;
-          animation-name: mymove;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-}
-
-@-webkit-keyframes mymove {
-  from {
-    left: 300px;
-  }
-  to {
-    left: 0px;
-  }
-}
-
-@keyframes mymove {
-  from {
-    left: 300px;
-  }
-  to {
-    left: 0px;
-  }
-}
-#transform {
-  position: relative;
-  -webkit-animation-name: mymovetrans;
-          animation-name: mymovetrans;
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-}
-
-@-webkit-keyframes mymovetrans {
-  from {
-    right: 300px;
-  }
-  to {
-    right: 0px;
-  }
-}
-
-@keyframes mymovetrans {
-  from {
-    right: 300px;
-  }
-  to {
-    right: 0px;
-  }
-}
-/* -------------------- FOR IMG --------------------------*/
-.card img:hover {
-  transform: scale(1.1);
-}/*# sourceMappingURL=style.css.map */
+/* -------------------- FOR IMG --------------------------*//*# sourceMappingURL=style.css.map */

@@ -197,7 +197,7 @@ main {
 }
 
 .banner_info {
-    @extend .flex_center;
+    @extend .test, .flex_center;
     flex-flow: row wrap;
     width: 50%;
     margin: auto;
@@ -546,14 +546,14 @@ form {
 //  **************************** FOOTER ***************************************
 
 footer {
-    @extend .d-flex, .border, .margin ;
+    @extend .test, .d-flex, .border, .margin ;
     justify-content: center;
     align-items: flex-start;
     border-top: none;
     height: 37vh;
 
     .container {
-        @extend .d-flex, .flex_center;
+        @extend .test4, .d-flex, .flex_center;
         flex-direction: column;
         width: 60%;
         
@@ -570,12 +570,18 @@ footer {
 }
 
 .logo_box {
+    @extend .test3;
     display: grid;
-    grid-template-columns: 40% 60%;
-    width: 60%;
+    grid-template-columns: 50% 40%;
+    width: 70%;
 
     .partner, .social {
-        @extend .d-flex, .flex_evenly;
+        @extend .test4, .d-flex, .flex_evenly;
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+        }
     }
 }
 /* -------------------------------------------------------------*/
@@ -693,7 +699,21 @@ footer {
 
     footer {
         align-items: center;
+        
+        .container {
+            width: 80%;
 
+            .row {
+                
+                p{
+                    font-size: small;
+                    text-align: center;
+                    margin: 0;
+                }
+            }
+        }
+
+        
         .logo_box {
             width: 70%;
         }
@@ -711,6 +731,11 @@ footer {
 
 
 @media (max-width: 480px) {
+
+    p {
+        font-size: small;
+    }
+
 
     header {
         height: 7vh;
@@ -737,7 +762,7 @@ footer {
         grid-template-rows: 80% 20%;
 
         .banner_info {
-            width: 55%;
+            width: 80%;
         }
 
         .banner_btn {
@@ -745,6 +770,7 @@ footer {
         }
 
         .btn {
+            font-size: x-small;
             padding: 0.7em 1.4em;
         }
 
@@ -752,21 +778,48 @@ footer {
             height: 50%;
         }
 
+        p {
+            // text-align: start;
+            font-size: 10px;
+        }
+
         h1 {
+            font-size: medium;
             margin: 1vh;
         }
     }
+
 
     .side_box {
         height: 20vh;
         right: 6.2vw;
         top: 40vh;
     }
+    section {
+        
+        h2 {
+            font-size: larger;
+            margin-bottom: 2vh;
+        }
+        .row_card {
+            flex-direction: column;
+            .card {
+                width: 80%;
+            }
+            h4 {
+                margin-top: 1vw;
+                margin-bottom: 6vh;
+                font-size: 1em;
+            }
+        }
+    }
 
+
+    // Img Shuriken Bat
     .batarang {
         position: absolute;
-        top: -11vh;
-        left: 14;
+        top: -4vh !important;
+        left: 18vw !important;
         z-index: 8;
     }
 
@@ -839,10 +892,33 @@ footer {
 
     footer {
         height: 30vh;
+
         .container {
             width: 100%;
+
+            .row {
+                width: 80%;
+
+                p{
+                    font-size: xx-small;
+                }
+            }
+
+            .logo_box {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 100%;
+                
+                .partner, .social {
+                    justify-content: space-between;
+                    width: 35%;
+                }
+                img {
+                    max-width: 100%;
+                }
+            }
         }
-        font-size: 2vw;
     }
 
 }
@@ -853,39 +929,39 @@ footer {
 
 /* -------------------- FOR TEXT --------------------------*/
 
-p, h1, h2, h4, h6 {
-    position: relative;
-    animation-name: mymove;
-    animation-duration: 5s;
-    animation-iteration-count: 1;
-    animation-delay: 2s;
-}
+// p, h1, h2, h4, h6 {
+//     position: relative;
+//     animation-name: mymove;
+//     animation-duration: 5s;
+//     animation-iteration-count: 1;
+//     animation-delay: 2s;
+// }
 
-@keyframes mymove {
-    from {left: 300px;}
-    to {left: 0px;}
-}
+// @keyframes mymove {
+//     from {left: 300px;}
+//     to {left: 0px;}
+// }
 
-#transform {
-    position: relative;
-    animation-name: mymovetrans;
-    animation-duration: 4s;
-    animation-iteration-count: 1;
-    animation-delay: 0s;
-}
+// #transform {
+//     position: relative;
+//     animation-name: mymovetrans;
+//     animation-duration: 4s;
+//     animation-iteration-count: 1;
+//     animation-delay: 0s;
+// }
 
 
-@keyframes mymovetrans {
-    from {right: 300px;}
-    to {right: 0px;}
-}
+// @keyframes mymovetrans {
+//     from {right: 300px;}
+//     to {right: 0px;}
+// }
 
 
 /* -------------------- FOR IMG --------------------------*/
 
 
-.card {
-    img:hover {
-        transform: scale(1.1);
-    }
-}
+// .card {
+//     img:hover {
+//         transform: scale(1.1);
+//     }
+// }
