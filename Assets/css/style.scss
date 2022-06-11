@@ -62,6 +62,9 @@ a, h2 {
 .margin {
     margin: 0 7.5vw;
 }
+.bg {
+    background: linear-gradient(135deg,#40403b, #081d29) !important;
+}
 
 .d-flex {
     display: flex;
@@ -197,7 +200,7 @@ main {
 }
 
 .banner_info {
-    @extend .test, .flex_center;
+    @extend .flex_center;
     flex-flow: row wrap;
     width: 50%;
     margin: auto;
@@ -244,7 +247,7 @@ main {
     flex-direction: column;
     position: fixed;
     top: 29vh;
-    right: 4.5vw;
+    right: 4vw;
     z-index: 100;
     height: 50vh;
     width: 7vw;
@@ -409,12 +412,12 @@ section {
 }
 
 .slide_content {
+    @extend .bg;
     padding: 1.5vw;
     border: 1px solid #c4c4c4;
     border-left: none;
     margin: 0;
     border-radius: 0 4% 4% 0;
-    background: linear-gradient(135deg,#40403b, #081d29);
 
     p{
         font-size: 1vw;
@@ -469,31 +472,109 @@ section {
 // ************************ NEWSLETTER ************************
 
 #newsletter {
-    @extend .test3;
+
     .container {
-        @extend .test2, .d-flex, .flex_between, .position_up;
+        @extend .d-flex, .flex_between, .position_up, .bg;
         flex-flow: column wrap;
-        padding: 7vh 0;
-        // height: 0vh;
-        background: linear-gradient(135deg,#40403b, #081d29);
+    }
+
+    .col {
+        margin: 7vh 0;
+        width: 60%;
+        
+        .row {
+            width: 100%;
+            margin-bottom: 3vw;
+
+            h4 {
+                margin: 0 0 2vw 0;
+            }
+
+        }
+
+        h2 {
+            margin: 0 auto;
+            width: fit-content
+        }
     }
 }
 
 form {
-    @extend .test, .d-flex,;
+    @extend .d-flex,;
     justify-content: space-between;
     align-items: flex-start;
     flex-flow: column wrap;
-    height: 88%;
-    width: 50vw;
+    margin-top: 3vw;
+
+    .input {
+        border-bottom: 1px solid #c4c4c4;
+        input, select {
+            width: 100%;
+            background: none;
+            border: none;
+            outline: none;
+            padding: 8px 0 4px 0;
+            font-size: large;
+            color: #fff;
+            font-weight: lighter;
+        }
+        select {
+            
+            option {
+                background: #081d29;
+                color: #c4c4c4;
+                
+            }
+        } 
+    }
 
     h4 {
         font-size: 22px;
-        margin-bottom: 20%;
+        margin-bottom: 7vh;
+        font-weight: lighter;
         text-transform: uppercase;
+    }
+
+    .btn {
+        margin: 0 auto;
+        padding: 0.8rem 4rem;
+        font-size: 1.25rem;
     }
 }
 
+.condition {
+    @extend .d-flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .input{
+        margin: 1vw 0;
+    }
+
+    p {
+        font-size: large;
+        width: 80%;
+        color: #c4c4c4;
+
+    }
+}
+
+.newsletter_choose {
+    @extend .d-flex, .flex_between;
+    margin-top: 1.4vw !important;
+    width: 65%;
+    margin: 0 auto;
+
+    .btn_sm {
+        padding: 0.6rem 1.8rem;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #c4c4c4;
+        &:hover {
+            @extend .bg ;
+        }
+    }
+}
 /* -------------------------------------------------------------*/
 
 
@@ -546,14 +627,14 @@ form {
 //  **************************** FOOTER ***************************************
 
 footer {
-    @extend .test, .d-flex, .border, .margin ;
+    @extend .d-flex, .border, .margin ;
     justify-content: center;
     align-items: flex-start;
     border-top: none;
     height: 37vh;
 
     .container {
-        @extend .test4, .d-flex, .flex_center;
+        @extend .d-flex, .flex_center;
         flex-direction: column;
         width: 60%;
         
@@ -570,13 +651,12 @@ footer {
 }
 
 .logo_box {
-    @extend .test3;
     display: grid;
     grid-template-columns: 50% 40%;
     width: 70%;
 
     .partner, .social {
-        @extend .test4, .d-flex, .flex_evenly;
+        @extend .d-flex, .flex_evenly;
 
         img {
             max-height: 100%;
@@ -665,8 +745,40 @@ footer {
             }
         }
 
+        h6 {
+            font-size: medium;
+            margin-bottom: 5px;
+        }
+
+        p {
+            font-size: 14px;
+        }
 
     }
+
+    #newsletter {
+
+        .col {
+            width: 77%;
+            font-size: small;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        h4 {
+            font-size: 20px;
+        }
+        p, input {
+            font-size: medium;
+        }
+        select {
+            font-size: small;
+
+        }
+    }
+
 
     #message {
         height: 40vw;
@@ -712,7 +824,6 @@ footer {
                 }
             }
         }
-
         
         .logo_box {
             width: 70%;
@@ -834,6 +945,14 @@ footer {
 
     #multimedia {
         
+        h6 {
+            font-size: small;
+            margin-bottom: 5px;
+        }
+
+        p {
+            font-size: 10px;
+        }
         .carousel {
             grid-template-columns: 10% 80% 10%;
             
@@ -858,6 +977,48 @@ footer {
 
     }
 
+    #newsletter {
+
+        .col {
+            width: 80%;
+            font-size: small;
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+
+        h4 {
+            font-size: 16px;
+        }
+
+        p {
+            width: 100%;
+        }
+
+        p, input {
+            font-size: small;
+        }
+
+        select {
+            font-size: smaller;
+
+        }
+
+        .newsletter_choose {
+            width: 80%;
+
+            .btn_sm {
+                padding: 0.2rem 1rem;
+            }
+        }
+
+        .btn {
+            padding: 0.5rem 1.6rem;
+            font-size: 1rem;
+        }
+    }
+
     #message {
         height: 30vh;
         grid-template-columns: 13% 74% 13%;
@@ -874,10 +1035,12 @@ footer {
         .message_slide {
 
             .container {
+
                 p {
                     font-size: 2.5vw;
                     width: 100%;
                 }
+
                 .text_sm {
                     font-size: 1.5vw;
                     margin-top: 10px;
@@ -929,32 +1092,32 @@ footer {
 
 /* -------------------- FOR TEXT --------------------------*/
 
-// p, h1, h2, h4, h6 {
-//     position: relative;
-//     animation-name: mymove;
-//     animation-duration: 5s;
-//     animation-iteration-count: 1;
-//     animation-delay: 2s;
-// }
+p, h1, h2, h4, h6 {
+    position: relative;
+    animation-name: textmove;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    // animation-delay: 2s;
+}
 
-// @keyframes mymove {
-//     from {left: 300px;}
-//     to {left: 0px;}
-// }
+@keyframes textmove {
+    from {right: 300px;}
+    to {right: 0px;}
+}
 
-// #transform {
-//     position: relative;
-//     animation-name: mymovetrans;
-//     animation-duration: 4s;
-//     animation-iteration-count: 1;
-//     animation-delay: 0s;
-// }
+#transform {
+    position: relative;
+    animation-name: transmove;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    // animation-delay: 0s;
+}
 
 
-// @keyframes mymovetrans {
-//     from {right: 300px;}
-//     to {right: 0px;}
-// }
+@keyframes transmove {
+    from {right: 300px;}
+    to {right: 0px;}
+}
 
 
 /* -------------------- FOR IMG --------------------------*/

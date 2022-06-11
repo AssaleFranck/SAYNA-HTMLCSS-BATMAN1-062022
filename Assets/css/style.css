@@ -47,7 +47,11 @@ a, h2 {
   margin: 0 7.5vw;
 }
 
-.d-flex, .logo_box .partner, .logo_box .social, footer .container .row, footer .container, footer, .message_slide .container, .message_slide, #message .left_mark, #message .right_mark, form, #newsletter .container, .player:hover, .player, .carousel .btn_slide_right, .carousel .btn_slide_left, .row_card, .side_box .social_icons, .side_box, .banner_info, .banner_text, .banner_btn, .banner_arrow, ul, nav, header {
+.bg, .newsletter_choose .btn_sm:hover, #newsletter .container, .slide_content {
+  background: linear-gradient(135deg, #40403b, #081d29) !important;
+}
+
+.d-flex, .logo_box .partner, .logo_box .social, footer .container .row, footer .container, footer, .message_slide .container, .message_slide, #message .left_mark, #message .right_mark, .newsletter_choose, .condition, form, #newsletter .container, .player:hover, .player, .carousel .btn_slide_right, .carousel .btn_slide_left, .row_card, .side_box .social_icons, .side_box, .banner_info, .banner_text, .banner_btn, .banner_arrow, ul, nav, header {
   display: flex;
 }
 
@@ -56,7 +60,7 @@ a, h2 {
   align-items: center;
 }
 
-.flex_between, #newsletter .container, .row_card, .side_box, nav {
+.flex_between, .newsletter_choose, #newsletter .container, .row_card, .side_box, nav {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
@@ -87,19 +91,19 @@ a, h2 {
   border: 2px solid rgba(188, 187, 189, 0.2823529412);
 }
 
-.test, footer, form, .banner_info {
+.test {
   border: 1px solid #fff;
 }
 
-.test2, #newsletter .container {
+.test2 {
   border: 1px solid green;
 }
 
-.test3, .logo_box, #newsletter {
+.test3 {
   border: 1px solid yellow;
 }
 
-.test4, .logo_box .partner, .logo_box .social, footer .container {
+.test4 {
   border: 1px solid red;
 }
 
@@ -196,7 +200,7 @@ main {
   flex-direction: column;
   position: fixed;
   top: 29vh;
-  right: 4.5vw;
+  right: 4vw;
   z-index: 100;
   height: 50vh;
   width: 7vw;
@@ -319,7 +323,6 @@ section p {
   border-left: none;
   margin: 0;
   border-radius: 0 4% 4% 0;
-  background: linear-gradient(135deg, #40403b, #081d29);
 }
 .slide_content p {
   font-size: 1vw;
@@ -357,23 +360,84 @@ section p {
 /* -------------------------------------------------------------*/
 #newsletter .container {
   flex-flow: column wrap;
-  padding: 7vh 0;
-  background: linear-gradient(135deg, #40403b, #081d29);
+}
+#newsletter .col {
+  margin: 7vh 0;
+  width: 60%;
+}
+#newsletter .col .row {
+  width: 100%;
+  margin-bottom: 3vw;
+}
+#newsletter .col .row h4 {
+  margin: 0 0 2vw 0;
+}
+#newsletter .col h2 {
+  margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 form {
   justify-content: space-between;
   align-items: flex-start;
   flex-flow: column wrap;
-  height: 88%;
-  width: 50vw;
+  margin-top: 3vw;
+}
+form .input {
+  border-bottom: 1px solid #c4c4c4;
+}
+form .input input, form .input select {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 8px 0 4px 0;
+  font-size: large;
+  color: #fff;
+  font-weight: lighter;
+}
+form .input select option {
+  background: #081d29;
+  color: #c4c4c4;
 }
 form h4 {
   font-size: 22px;
-  margin-bottom: 20%;
+  margin-bottom: 7vh;
+  font-weight: lighter;
   text-transform: uppercase;
 }
+form .btn {
+  margin: 0 auto;
+  padding: 0.8rem 4rem;
+  font-size: 1.25rem;
+}
 
+.condition {
+  justify-content: space-between;
+  flex-direction: column;
+}
+.condition .input {
+  margin: 1vw 0;
+}
+.condition p {
+  font-size: large;
+  width: 80%;
+  color: #c4c4c4;
+}
+
+.newsletter_choose {
+  margin-top: 1.4vw !important;
+  width: 65%;
+  margin: 0 auto;
+}
+.newsletter_choose .btn_sm {
+  padding: 0.6rem 1.8rem;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #c4c4c4;
+}
 /* -------------------------------------------------------------*/
 #message {
   display: grid;
@@ -476,6 +540,30 @@ footer .container .row p {
   }
   #multimedia .btn_slide_left img, #multimedia .btn_slide_right img {
     width: 100%;
+  }
+  #multimedia h6 {
+    font-size: medium;
+    margin-bottom: 5px;
+  }
+  #multimedia p {
+    font-size: 14px;
+  }
+
+  #newsletter .col {
+    width: 77%;
+    font-size: small;
+  }
+  #newsletter h2 {
+    font-size: 30px;
+  }
+  #newsletter h4 {
+    font-size: 20px;
+  }
+  #newsletter p, #newsletter input {
+    font-size: medium;
+  }
+  #newsletter select {
+    font-size: small;
   }
 
   #message {
@@ -594,6 +682,13 @@ footer .container .row p {
     right: -9vw;
   }
 
+  #multimedia h6 {
+    font-size: small;
+    margin-bottom: 5px;
+  }
+  #multimedia p {
+    font-size: 10px;
+  }
   #multimedia .carousel {
     grid-template-columns: 10% 80% 10%;
   }
@@ -610,6 +705,36 @@ footer .container .row p {
   #multimedia .carousel .btn_slide_right img {
     width: 70%;
     margin-left: 2vw;
+  }
+
+  #newsletter .col {
+    width: 80%;
+    font-size: small;
+  }
+  #newsletter h2 {
+    font-size: 28px;
+  }
+  #newsletter h4 {
+    font-size: 16px;
+  }
+  #newsletter p {
+    width: 100%;
+  }
+  #newsletter p, #newsletter input {
+    font-size: small;
+  }
+  #newsletter select {
+    font-size: smaller;
+  }
+  #newsletter .newsletter_choose {
+    width: 80%;
+  }
+  #newsletter .newsletter_choose .btn_sm {
+    padding: 0.2rem 1rem;
+  }
+  #newsletter .btn {
+    padding: 0.5rem 1.6rem;
+    font-size: 1rem;
   }
 
   #message {
@@ -661,4 +786,58 @@ footer .container .row p {
   }
 }
 /* -------------------- FOR TEXT --------------------------*/
+p, h1, h2, h4, h6 {
+  position: relative;
+  -webkit-animation-name: textmove;
+          animation-name: textmove;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+
+@-webkit-keyframes textmove {
+  from {
+    right: 300px;
+  }
+  to {
+    right: 0px;
+  }
+}
+
+@keyframes textmove {
+  from {
+    right: 300px;
+  }
+  to {
+    right: 0px;
+  }
+}
+#transform {
+  position: relative;
+  -webkit-animation-name: transmove;
+          animation-name: transmove;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+
+@-webkit-keyframes transmove {
+  from {
+    right: 300px;
+  }
+  to {
+    right: 0px;
+  }
+}
+
+@keyframes transmove {
+  from {
+    right: 300px;
+  }
+  to {
+    right: 0px;
+  }
+}
 /* -------------------- FOR IMG --------------------------*//*# sourceMappingURL=style.css.map */
