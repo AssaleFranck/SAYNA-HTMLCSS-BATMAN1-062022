@@ -1,3 +1,8 @@
+@import '../base/global';
+@import '../base/animation';
+@import '../component/navbar';
+@import '../component/footer';
+
 // @font-face {
 //     font-family: 'Space Grotesk', sans-serif;
 //     src: url('Assets');
@@ -49,7 +54,10 @@ a, h2 {
 
 /* -------------------------------------------------------------*/
 
-
+.home {
+    font-weight: normal;
+    text-decoration: underline;
+}
 
 //  **************************** MAIN ***************************************
 
@@ -778,46 +786,3 @@ form {
         }
     }
 }
-
-// *********************** ANIMATION *****************************
-
-
-
-/* -------------------- FOR TEXT --------------------------*/
-
-p, h1, h2, h4, h6 {
-    position: relative;
-    animation-name: textmove;
-    animation-duration: 4s;
-    animation-iteration-count: 1;
-    // animation-delay: 2s;
-}
-
-@keyframes textmove {
-    from {right: 300px;}
-    to {right: 0px;}
-}
-
-#transform {
-    position: relative;
-    animation-name: transmove;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-    // animation-delay: 0s;
-}
-
-
-@keyframes transmove {
-    from {right: 300px;}
-    to {right: 0px;}
-}
-
-
-/* -------------------- FOR IMG --------------------------*/
-
-
-// .card {
-//     img:hover {
-//         transform: scale(1.1);
-//     }
-// }
